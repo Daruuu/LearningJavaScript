@@ -30,7 +30,7 @@ for (let i = 1; i <= number; i++) {
 
 The preceding code illustrates an algorithm for implementing a Fibonacci sequence. Now, here's the corresponding code in the assembly language:
 
-```
+``` cobol
 area ascen,code,readonly
  entry
  code32
@@ -57,7 +57,6 @@ back add r0,r1
 
 A Fibonacci sequence is defined as a set of numbers such that each number is the sum of the two preceding numbers, starting from 0 and 1.
 
-
 ### Keyword to work with variables
 
 The keyword `let` was introduced in the JavaScript standard ECMAScript 6 (ES6).
@@ -65,12 +64,11 @@ Using `let` gives your variable block scope.
 We recommend that you use `let` over var to better manage scope in your application.
 
 JavaScript uses the different types of scope, like global scope and function scope,
-to determine what variables are available in which parts of the code. 
-For example, a global variable is available inside a function because it belongs to global scope, or "outer" scope. 
+to determine what variables are available in which parts of the code.
+For example, a global variable is available inside a function because it belongs to global scope, or "outer" scope.
 Variables designated with the keyword var are scoped (their values are visible) within the function body, and let variables are scoped to their enclosing block within curly brackets.
 That means that if you use `var` in a for loop, it's visible outside the for loop, which might have unexpected results.
 Using `let` is a better choice because it's available only in the enclosing block (that is, the for loop), so its availability might be more expected.
-
 
 #### Assigning a value
 
@@ -81,8 +79,8 @@ myVariable = 123;
 The use of the assignment operator (=) in this example sets a value to a variable.
 It differs from a comparison, which uses two or three operators like == or ===.
 
-
 #### Constants
+
 The declaration and initialization of a constant follows the same concepts as a variable, except that it uses the const keyword:
 
 const MY_VARIABLE = 123;
@@ -102,10 +100,9 @@ The following syntax has an object value that's not protected. It is allowed, be
 const obj = { a: 3 };
 obj.a = 5;  // allowed
 
-
 ## Data Types
 
-Data types are also called JavaScript data primitives, because they're the lowest-level data types that the language provides. 
+Data types are also called JavaScript data primitives, because they're the lowest-level data types that the language provides.
 There are six primitive data types:
 string, number, bigint, boolean, undefined, and symbol.
 
@@ -113,16 +110,15 @@ string, number, bigint, boolean, undefined, and symbol.
 
 Variables can store all types of numbers, including decimals or negative numbers.
 
-+	Addition: Calculates the sum of two numbers.	1 + 2 //expected answer is 3
++ Addition: Calculates the sum of two numbers. 1 + 2 //expected answer is 3
 
--	Subtraction: Calculates the difference of two numbers.	1 - 2 //expected answer is -1
++ Subtraction: Calculates the difference of two numbers. 1 - 2 //expected answer is -1
 
-*	Multiplication: Calculates the product of two numbers.	1 * 2 //expected answer is 2
++ Multiplication: Calculates the product of two numbers. 1 * 2 //expected answer is 2
 
-/	Division: Calculates the quotient of two numbers.	1 / 2 //expected answer is 0.5
+/ Division: Calculates the quotient of two numbers. 1 / 2 //expected answer is 0.5
 
-%	Remainder: Calculates the remainder from the division of two numbers.	1 % 2 //expected answer is 1
-
+% Remainder: Calculates the remainder from the division of two numbers. 1 % 2 //expected answer is 1
 
 ### Strings
 
@@ -141,7 +137,6 @@ myString1 + myString2 + "!"; //HelloWorld!
 myString1 + " " + myString2 + "!"; //Hello World!
 myString1 + ", " + myString2 + "!"; //Hello, World!
 
-
 Template literals are another way to format strings, except that instead of quotes, you use backticks. Anything that's not plain text must be placed inside placeholders ${ }, including any variables that might be strings. Here's an example:
 
 let myString1 = "Hello";
@@ -155,12 +150,3 @@ Los literales de plantilla respetarán los espacios y saltos de línea
 ### Booleans
 
 Booleans can be only two values: true or false.
-
-
-
-
-
-
-
-
-
