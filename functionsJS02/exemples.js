@@ -29,3 +29,26 @@ function createGreetingMessage(name) {
 
 let greetingMessage = createGreetingMessage('Daruuu');
 console.log(greetingMessage);
+
+// anonymous functions
+function displayDone() {
+    console.log('Done');
+}
+setTimeout(displayDone, 3000)
+
+setTimeout(
+    function() { // anonymous function
+        console.log('Done!');
+    },
+    3000 // 3000 milliseconds (3 seconds)
+)
+
+// arrow functions
+
+setTimeout(
+    () => {
+        console.log('done!');
+    },
+    3000    //3000 milliseconds (3 seconds)
+)
+

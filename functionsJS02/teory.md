@@ -139,3 +139,75 @@ let greetingMessage = createGreetingMessage('Christopher');
 
 ### Anonymous functions
 
+You can call a function on demand by using its name and passing in any appropriate parameters.
+But sometimes you might want to allow another process to execute the functions you've created.
+
+Imagine creating a webpage with several timers.
+When a timer finishes, you want to run code to display a message.
+The problem is that you know the timer will expire but, because the timer length might change, you don't know exactly when it will expire.
+Therefore, you don't know exactly when you want your code to run.
+To support this type of a scenario, you can use a `callback`.
+
+Los callbacks se usan frecuentemente en diferentes frameworks y bibliotecas para indicar el código que se debe ejecutar cuando algo sucede o termina.
+Por ejemplo, se usa un `callback` para indicar lo que debe suceder cuando un usuario selecciona un botón, una operación de larga duración termina o un temporizador expira.
+Además, los callbacks pueden ser útiles en situaciones donde no se conoce con exactitud cuándo se completará una tarea.
+
+### Use a callback
+
+es una función normal y puede crearla como lo haría con cualquier función que haya escrito en el pasado.
+En el siguiente ejemplo, notará que es una función normal sin parámetros.
+
+``` js
+function displayDone() {
+  console.log('Done');
+}
+```
+
+You can pass it into a function, which accepts a `callback` such as setTimeout. The setTimeout callback is a built-in function that allows you to create a timer. When the timer finishes, it calls the function that's passed in as the first parameter. The second parameter indicates the number of milliseconds to wait until it calls the function.
+
+If you want to set a 3-second timeout and have the code display "Done!" when it's finished running, you could use setTimeout, like this:
+
+``` js
+// timer value is in milliseconds
+setTimeout(displayDone, 3000);
+```
+
+Tenga en cuenta que `displayDone` no va seguido de un par de paréntesis vacíos ( `()`) cuando se pasa como parámetro a setTimeout.
+Si escribe `setTimeout(displayDone(), 3000)`, le está dando instrucciones a JavaScript para que se ejecute displayDoneinmediatamente. Debido a que desea pasar la función por `setTimeout` para `setTimeout` sea llamado cuando transcurra el tiempo, solo usa `displayDone`.
+
+
+### Anonymous function
+
+Although the preceding code is valid, such code can create what some developers call "namespace pollution."
+That is, when you write code with numerous variables, functions, and other entities with names, it can become confusing to know the purpose of each, and you can sometimes run out of good names.
+In our example, if the only place displayDone will be used is with setTimeout you don't need to give it a name.
+You can create an anonymous function.
+
+Una función anónima es una función sin nombre. Las funciones anónimas se comportan de la misma manera que las funciones normales y es la forma en que los desarrolladores normalmente configuran las devoluciones de llamadas.
+
+Puede crear una función anónima usando la misma sintaxis que usaría para crear una función normal, excepto que omite el nombre.
+Por ejemplo:
+
+``` js
+setTimeout(
+    function() { // anonymous function
+        console.log('Done!');
+    },
+    3000 // 3000 milliseconds (3 seconds)
+)
+```
+
+### Arrow functions
+
+Arrow functions, or fat arrow functions, are a slightly different way of creating anonymous functions.
+Arrow functions use the `=>` operator to indicate the start of the body of the function.
+You can rewrite the preceding anonymous function example by using fat arrow syntax:
+
+``` js
+setTimeout(
+    () => { // anonymous function
+        console.log('Done!');
+    },
+    3000 // 3000 milliseconds (3 seconds)
+)
+```
